@@ -2,7 +2,7 @@ import React from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
 function Nav() {
-  const  categories = [
+  const categories = [
     { name: 'projects', description: 'Individual and group software bootcamp projects' },
     { name: 'resume', description: 'Work and educational history' },
   ];
