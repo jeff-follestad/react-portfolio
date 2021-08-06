@@ -2,7 +2,7 @@ import React from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
 function Nav() {
-  const  categories = [
+  const categories = [
     { name: 'projects', description: 'Individual and group software bootcamp projects' },
     { name: 'resume', description: 'Work and educational history' },
   ];
@@ -13,11 +13,7 @@ function Nav() {
 
   return (
     <header data-testid="header" className="flex-row px-1">
-      <h2>
-        <a href="/">
-          <span role="img" aria-label="camera"> </span> PORTFOLIO
-        </a>
-      </h2>
+
       <nav>
         <ul className="flex-row">
           <li className="mx-2">
