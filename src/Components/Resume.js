@@ -1,101 +1,114 @@
-  
-import React, { Component } from 'react';
-export default  class Resume extends Component {
-  render() {
-    let resumeData = this.props.resumeData;
-    return (
-      <section id="resume">
+let resumeData = {
+  "imagebaseurl": "https://jeff-follestad.github.io/",
+  "name": "Jeff Follestad",
+  "role": "Full Stack Developer",
+  "linkedinId": "Your LinkedIn Id",
+  "skypeid": "Your skypeid",
+  "roleDescription": "",
+  "socialLinks": [
+    {
+      "name": "linkedin",
+      "url": "https://www.linkedin.com/in/jefffollestad/",
+      "className": "fa fa-linkedin"
+    },
+    {
+      "name": "github",
+      "url": "http://github.com/jeff-follestad",
+      "className": "fa fa-github"
+    },
+    {
+      "name": "skype",
+      "url": "http://instagram.com/JeffFollestad",
+      "className": "fa fa-twitter"
+    }
+  ],
+  "aboutme": "Full stack web development student at UC Berkley",
+  "address": "Bay Area, CA",
+  "website": "https://react-portfolio-ut.herokuapp.com/",
+  "education": [
+    {
+      "UniversityName": "UC Berkeley Bootcamp",
+      "specialization": "Web development",
+      "MonthOfPassing": "August",
+      "YearOfPassing": "2021",
+      "Achievements": "Certificate"
+    },
+    {
+      "UniversityName": "University of Minnesota",
+      "specialization": "Journalism",
+    }
+  ],
+  "work": [
+    {
+      "CompanyName": "LumApps",
+      "specialization": "Channel Partner Manager",
+      "MonthOfLeaving": "April",
+      "YearOfLeaving": "2021",
+      "Achievements": ""
+    },
+    {
+      "CompanyName": "Agosto",
+      "specialization": "Director CSS",
+      "MonthOfLeaving": "April",
+      "YearOfLeaving": "2020",
+      "Achievements": ""
+    }
+  ],
+  "skillsDescription": "",
+  "skills": [
+    {
+      "skillname": "HTML5"
+    },
+    {
+      "skillname": "CSS"
+    },
+    {
+      "skillname": "Reactjs"
+    }
+  ],
+  "portfolio": [
+    {
+      "name": "",
+      "description": "",
+      "imgurl": "./images/.png",
+      "imglink": ""
+    },
+    {
+      "name": "",
+      "description": "",
+      "imgurl": "",
+      "imglink": ""
 
-         <div className="row education">
+    },
+    {
+      "name": "",
+      "description": "",
+      "imgurl": "",
+      "imglink": ""
 
-            <div className="three columns header-col">
-               <h1><span>Education</span></h1>
-            </div>
+    },
+    {
+      "name": "",
+      "description": "",
+      "imgurl": "",
+      "imglink": ""
 
-            <div className="nine columns main-col">
-              {
-                resumeData.education && resumeData.education.map((item)=>{
-                  return(
-                    <div className="row item">
-                       <div className="twelve columns">
-                          <h3>{item.UniversityName}</h3>
-                          <p className="info">
-                          {item.specialization}
-                          <span>&bull;</span> <em className="date">{item.MonthOfPassing} {item.YearOfPassing}</em></p>
-                          <p>
-                          {item.Achievements}
-                          </p>
-                       </div>
-                    </div>
-                  )
-                })
-              }
-            </div>
-         </div>
-        <div className="row work">
-            <div className="three columns header-col">
-               <h1><span>Work</span></h1>
-            </div>
+    },{
+      "name": "",
+      "description": "",
+      "imgurl": "",
+      "imglink": ""
 
-            <div className="nine columns main-col">
-              {
-                resumeData.work && resumeData.work.map((item) => {
-                  return(
-                    <div className="row item">
-                       <div className="twelve columns">
-                          <h3>{item.CompanyName}</h3>
-                          <p className="info">
-                          {item.specialization}
-                          <span>&bull;</span> <em className="date">{item.MonthOfLeaving} {item.YearOfLeaving}</em></p>
-                          <p>
-                          {item.Achievements}
-                          </p>
-                       </div>
+    },
+    {
+      "name": "",
+      "description": "",
+      "imgurl": "./images/Portfolio.png",
+      "imglink": ""
 
-                    </div>
-
-                  )
-                })
-              }
-            </div> 
-         </div>
-
-
-         <div className="row skill">
-
-            <div className="three columns header-col">
-               <h1><span>Skills</span></h1>
-            </div>
-
-            <div className="nine columns main-col">
-
-               <p>
-               {resumeData.skillsDescription}
-               </p>
-
-   				<div className="bars">
-
-   				   <ul className="skills">
-                {
-                  resumeData.skills && resumeData.skills.map((item) => {
-                    return(
-                      <li>
-                      <span className={`bar-expand ${item.skillname.toLowerCase()}`}>
-                      </span><em>{item.skillname}</em>
-                      </li>
-                    )
-                  })
-                }
-
-   					</ul>
-
-   				</div>
-
-   			</div>
-
-         </div>
-
-      </section>
-    );
-  }
+    }
+  ]
+ 
 }
+
+export default resumeData
