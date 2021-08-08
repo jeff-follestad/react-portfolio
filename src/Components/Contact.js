@@ -1,66 +1,116 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 
-import { validateEmail } from '../utils/helpers';
+class Contact extends Component {
+  render() {
 
-function ContactForm() {
-  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-
-  const [errorMessage, setErrorMessage] = useState('');
-  const { name, email, message } = formState;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!errorMessage) {
-      console.log('Submit Form', formState);
+    if(this.props.data){
+      var name = this.props.data.name;
+      var street = this.props.data.address.street;
+      var city = this.props.data.address.city;
+      var state = this.props.data.address.state;
+      var zip = this.props.data.address.zip;
+      var phone= this.props.data.phone;
+      var email = this.props.data.email;
+      var message = this.props.data.contactmessage;
     }
-  };
 
-  const handleChange = (e) => {
-    if (e.target.name === 'email') {
-      const isValid = validateEmail(e.target.value);
-      if (!isValid) {
-        setErrorMessage('Your email is invalid.');
-      } else {
-        setErrorMessage('');
-      }
-    } else {
-      if (!e.target.value.length) {
-        setErrorMessage(`${e.target.name} is required.`);
-      } else {
-        setErrorMessage('');
-      }
+    if(this.props.repos){
+      var projectRepos = this.props.repos.projects.map(function(projects) {
+         return (
+            <li key={projects.title}>
+               <span>
+                  <a href={projects.repo} target="_blank">{projects.shorttitle}</a>
+               </span>
+            </li>
+         )
+      })
     }
-    if (!errorMessage) {
-      setFormState({ ...formState, [e.target.name]: e.target.value });
-      console.log('Handle Form', formState);
-    }
-  };
 
-  return (
-    <section>
-      <h1 data-testid="h1tag">Contact me</h1>
-      <form id="contact-form" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
-        </div>
-        <div>
-          <label htmlFor="email">Email address:</label>
-          <input type="email" name="email" defaultValue={email} onBlur={handleChange} />
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea name="message" rows="5" defaultValue={message} onBlur={handleChange} />
-        </div>
-        {errorMessage && (
-          <div>
-            <p className="error-text">{errorMessage}</p>
-          </div>
-        )}
-        <button data-testid="button" type="submit">Submit</button>
-      </form>
-    </section>
-  );
+
+    return (
+      <section id="contact">
+
+         <div className="row section-head">
+
+            <div className="two columns header-col">
+
+               <h1><span>Get In Touch.</span></h1>
+
+            </div>
+
+            <div className="ten columns">
+
+                  <p className="lead">{message}</p>
+
+            </div>
+
+         </div>
+
+         <div className="row">
+            <div className="eight columns">
+
+               <form action="" method="post" id="contactForm" name="contactForm">
+					<fieldset>
+
+                  <div>
+						   <label htmlFor="contactName">Name <span className="required">*</span></label>
+						   <input type="text" defaultValue="" size="35" id="contactName" name="contactName" onChange={this.handleChange}/>
+                  </div>
+
+                  <div>
+						   <label htmlFor="contactEmail">Email <span className="required">*</span></label>
+						   <input type="text" defaultValue="" size="35" id="contactEmail" name="contactEmail" onChange={this.handleChange}/>
+                  </div>
+
+                  <div>
+						   <label htmlFor="contactSubject">Subject</label>
+						   <input type="text" defaultValue="" size="35" id="contactSubject" name="contactSubject" onChange={this.handleChange}/>
+                  </div>
+
+                  <div>
+                     <label htmlFor="contactMessage">Message <span className="required">*</span></label>
+                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                  </div>
+
+                  <div>
+                     <button className="submit">Submit</button>
+                     <span id="image-loader">
+                        <img alt="" src="images/loader.gif" />
+                     </span>
+                  </div>
+					</fieldset>
+				   </form>
+
+           <div id="message-warning"> Error boy</div>
+				   <div id="message-success">
+                  <i className="fa fa-check"></i>Your message was sent, thank you!<br />
+				   </div>
+           </div>
+
+
+            <aside className="four columns footer-widgets">
+               <div className="widget widget_contact">
+
+					   <h4>Location and Phone</h4>
+					   <p className="address">
+						   {name}<br />
+						   <span>{phone}</span><br />
+                     <span>{email}</span><br />
+                     {city}, {state} (willing to relocate)<br />
+					   </p>
+				   </div>
+
+               <div className="widget widget_tweets">
+                  <h4 className="widget-title">Project Repos (source code)</h4>
+                  <ul id="twitter">
+                     {projectRepos}
+                  </ul>
+		         </div>
+            </aside>
+      </div>
+   </section>
+    );
+  }
 }
 
-export default ContactForm;
+export default Contact;
