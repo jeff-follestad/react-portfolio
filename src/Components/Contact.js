@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+// found a project online that used this structure for contact form
 class Contact extends Component {
   render() {
 
