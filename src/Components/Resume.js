@@ -68,43 +68,43 @@ let resumeData = {
   ],
   "portfolio": [
     {
-      "name": "Colossal Hogs",
-      "description": "The PACK IS BACK",
-      "imgurl": "./images/ColossalHogs.png",
-      "imglink": "https://the-pack-is-back.herokuapp.com/"
+      "name": "",
+      "description": "",
+      "imgurl": "./images/.png",
+      "imglink": ""
     },
     {
-      "name": "Team Generator",
-      "description": "Generates a team",
-      "imgurl": "./images/TeamGeneratorProfile.png",
-      "imglink": "https://github.com/joshkuruvilla512/employee-summary"
+      "name": "",
+      "description": "",
+      "imgurl": "",
+      "imglink": ""
 
     },
     {
-      "name": "ATX Now!",
-      "description": "Finding concerts in Austin",
-      "imgurl": "./images/ATXNow.png",
-      "imglink": "https://kgeary.github.io/atxnow/"
+      "name": "",
+      "description": "",
+      "imgurl": "",
+      "imglink": ""
 
     },
     {
-      "name": "Trivia Quiz",
-      "description": "An Office themed Trivia Quiz",
-      "imgurl": "images/TrivaQuiz.png",
-      "imglink": "https://github.com/joshkuruvilla512/Trivia-Quiz"
+      "name": "",
+      "description": "",
+      "imgurl": "",
+      "imglink": ""
 
     },{
-      "name": "Second Portfolio Page with Bootstrap",
-      "description": "Introduced to Bootstrap",
-      "imgurl": "./images/PortfolioBootstrap.png",
-      "imglink": "https://github.com/joshkuruvilla512/Homework2"
+      "name": "",
+      "description": "",
+      "imgurl": "",
+      "imglink": ""
 
     },
     {
-      "name": "First Portfolio Page",
-      "description": "Building blocks to coding",
+      "name": "",
+      "description": "",
       "imgurl": "./images/Portfolio.png",
-      "imglink": "https://github.com/joshkuruvilla512/JoshKuruvilla.github.io"
+      "imglink": ""
 
     }
   ]
